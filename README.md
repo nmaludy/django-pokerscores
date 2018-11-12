@@ -84,3 +84,20 @@ python manage.py runserver
 ```
 
 Test out the site by going to [http://localhost:8000/api](http://localhost:8000/api)
+
+
+## Editing models
+
+Edit or model code
+
+Creating migrations
+``` shell
+python manage.py makemigrations api
+```
+
+Run the migrations, note the number will be created above and will be different that `0001`
+
+``` shell
+python manage.py sqlmigrate api 0001
+```
+
