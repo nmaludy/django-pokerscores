@@ -62,10 +62,25 @@ source ./virtualenv/bin/activate
 pip install -r requirements.txt
 ```
 
-Setup the project (did this already, but this is how i created the project
+**NOTE** All following steps assume you're in the `pokerscores/` directory and have the `virtualenv/` activated.
+
+**YOU DON"T NEED TO DO THIS**. This is how i setup the project initially.
 
 ``` shell
 django-admin startproject pokerscores
-cd pokerscores/
 python manage.py startapp leaderboard
 ```
+
+Initialize the database
+
+``` shell
+python manage.py migrate
+```
+
+Run the test server (dev only)
+
+``` shell
+python manage.py runserrer
+```
+
+Test out the site by going to [http://localhost:8000/leaderboard]
