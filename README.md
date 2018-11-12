@@ -66,4 +66,6 @@ Setup the project (did this already, but this is how i created the project
 
 ``` shell
 django-admin startproject pokerscores
+cd pokerscores/
+python manage.py startapp leaderboard
 ```
