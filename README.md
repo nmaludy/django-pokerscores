@@ -80,7 +80,7 @@ python manage.py migrate
 Run the test server (dev only)
 
 ``` shell
-python manage.py runserrer
+python manage.py runserver
 ```
 
-Test out the site by going to [http://localhost:8000/leaderboard]
+Test out the site by going to [http://localhost:8000/leaderboard](http://localhost:8000/leaderboard)
