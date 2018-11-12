@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 ``` shell
 django-admin startproject pokerscores
-python manage.py startapp leaderboard
+python manage.py startapp api
 ```
 
 Initialize the database
@@ -83,4 +83,4 @@ Run the test server (dev only)
 python manage.py runserver
 ```
 
-Test out the site by going to [http://localhost:8000/leaderboard](http://localhost:8000/leaderboard)
+Test out the site by going to [http://localhost:8000/api](http://localhost:8000/api)
