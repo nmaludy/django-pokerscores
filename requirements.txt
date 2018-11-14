@@ -1,4 +1,6 @@
 Django
 djangorestframework
-markdown
 django-filter
+markdown
+psycopg2
+

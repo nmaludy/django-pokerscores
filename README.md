@@ -85,7 +85,7 @@ python manage.py migrate
 Run the test server (dev only)
 
 ``` shell
-python manage.py runserver
+DATABASE_PASSWORD=PokerScores123 python manage.py runserver
 ```
 
 Test out the site by going to [http://localhost:8000/api](http://localhost:8000/api)
@@ -104,5 +104,23 @@ Run the migrations, note the number will be created above and will be different 
 
 ``` shell
 python manage.py sqlmigrate api 0001
+```
+
+## Starting Database container
+
+Prerequisites
+- Docker
+- Vagrant
+- `psql` utility (on CentOS this is in the `postgresql` package)
+
+Start the docker container using Vagrant
+``` shell
+vagrant up
+```
+
+Connect to the container using `psql`. Note this uses a dev password. Definitely don't use this in production.
+
+``` shell
+PGPASSWORD=PokerScores123 psql -h localhost -U django pokerscores
 ```
 
