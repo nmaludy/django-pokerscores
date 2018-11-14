@@ -1,3 +1,5 @@
+[![Build Status](https://circleci.com/gh/nmaludy/django-pokerscores.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/nmaludy/django-pokerscores) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # Poker Leaderboard App
 
 ## Data
