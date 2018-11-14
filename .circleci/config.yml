@@ -20,12 +20,14 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+      # don't cache right now because the restore breaks the build due to
+      # it creating the ci/ directory
+      # # Download and cache dependencies
+      # - restore_cache:
+      #     keys:
+      #     - v1-dependencies-{{ checksum "requirements.txt" }}
+      #     # fallback to using the latest cache if no exact match is found
+      #     - v1-dependencies-
 
       # - run:
       #     name: install dependencies
@@ -37,10 +39,12 @@ jobs:
           name: install dependencies
           command: make requirements
 
-      - save_cache:
-          paths:
-            - ./ci/virtualenv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+      # don't cache right now because the restore breaks the build due to
+      # it creating the ci/ directory
+      # - save_cache:
+      #     paths:
+      #       - ./ci/virtualenv
+      #     key: v1-dependencies-{{ checksum "requirements.txt" }}
         
       # run tests!
       # this example uses Django's built-in test-runner
