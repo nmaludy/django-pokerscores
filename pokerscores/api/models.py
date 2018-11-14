@@ -2,11 +2,11 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from django import forms
 
 
 class League(models.Model):
     name = models.TextField()
+
 
 class User(models.Model):
     name = models.TextField()

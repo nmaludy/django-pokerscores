@@ -17,21 +17,21 @@ User
 Player
  - name
  - email
- - Activity (tournaments played)
+ - Scores (tournaments played)
  
 Season
  - name
  - League
- - start date
- - end date
+ - start date (optional)
+ - end date (optional)
  - List[Tournament]
  - active
  - visible
  
 Tournament
  - name
- - start date
- - end date
+ - start date (optional)
+ - end date (optional)
  - League
  - Optional[Season]
  - List[Score]
@@ -40,11 +40,14 @@ Tournament
 Score
  - Player
  - points
- - Game
+ - Tournament
  
 ScoringSystem
  - name
  - List[int] - points per place
+
+TODO: History
+ - Score history (something)
 
 Leaderboard
  - select a season
