@@ -103,3 +103,6 @@ virtualenv/
 
 # mypy
 .mypy_cache/
+
+# CI
+ci/
