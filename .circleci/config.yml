@@ -53,7 +53,8 @@ jobs:
       #       . venv/bin/activate
       #       python manage.py test
       - run:
-          name: make all
+          name: run tests
+          command: make all
 
       # - store_artifacts:
       #     path: test-reports
