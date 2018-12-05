@@ -18,26 +18,19 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 
-
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
-
-
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+from api.models import League, Profile
+from api.views import UserViewSet, GroupViewSet, LeagueViewSet, ProfileViewSet
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
+router.register(r'leagues', LeagueViewSet)
+router.register(r'profile', ProfileViewSet)
 
 urlpatterns = [
     # url(r'^', include(router.urls)),
-    # url(r'^api/', include('api.urls')),
+    url(r'^views/', include('api.urls')),
     url(r'^api/', include(router.urls)),
     url(r'^api-doc/', include('rest_framework.urls')),
     url(r'^admin/', admin.site.urls),

@@ -4,7 +4,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import League, User
+from .models import League, Profile
 
 admin.site.register(League)
-admin.site.register(User)
+admin.site.register(Profile)

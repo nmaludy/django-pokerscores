@@ -67,46 +67,7 @@ source ./virtualenv/bin/activate
 pip install -r requirements.txt
 ```
 
-**NOTE** All following steps assume you're in the `pokerscores/` directory and have the `virtualenv/` activated.
-
-**YOU DON"T NEED TO DO THIS**. This is how i setup the project initially.
-
-``` shell
-django-admin startproject pokerscores
-python manage.py startapp api
-```
-
-Initialize the database
-
-``` shell
-python manage.py migrate
-```
-
-Run the test server (dev only)
-
-``` shell
-DATABASE_PASSWORD=PokerScores123 python manage.py runserver
-```
-
-Test out the site by going to [http://localhost:8000/api](http://localhost:8000/api)
-
-
-## Editing models
-
-Edit or model code
-
-Creating migrations
-``` shell
-python manage.py makemigrations api
-```
-
-Run the migrations, note the number will be created above and will be different that `0001`
-
-``` shell
-python manage.py sqlmigrate api 0001
-```
-
-## Starting Database container
+### Starting Database container
 
 Prerequisites
 - Docker
@@ -124,3 +85,46 @@ Connect to the container using `psql`. Note this uses a dev password. Definitely
 PGPASSWORD=PokerScores123 psql -h localhost -U django pokerscores
 ```
 
+
+### Create the project
+
+**NOTE** All following steps assume you're in the `pokerscores/` directory and have the `virtualenv/` activated.
+
+
+**YOU DON"T NEED TO DO THIS STEP**. This is how i setup the project initially.
+
+``` shell
+django-admin startproject pokerscores
+DATABASE_PASSWORD=PokerScores123 python manage.py startapp api
+```
+
+### Initialize the database
+
+**NOTE** Only need to do this on the first run.
+
+``` shell
+DATABASE_PASSWORD=PokerScores123 python manage.py migrate
+```
+
+### Run the test server (dev only)
+
+``` shell
+DATABASE_PASSWORD=PokerScores123 python manage.py runserver
+```
+
+Test out the site by going to [http://localhost:8000/api](http://localhost:8000/api)
+
+## Editing models
+
+Edit yoor model code
+
+Creating migrations
+``` shell
+DATABASE_PASSWORD=PokerScores123 python manage.py makemigrations api
+```
+
+Run the migrations, note the number will be created above and will be different that `0001`
+
+``` shell
+DATABASE_PASSWORD=PokerScores123 python manage.py sqlmigrate api 0001
+```
